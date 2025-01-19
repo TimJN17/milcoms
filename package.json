@@ -1,0 +1,56 @@
+{
+  "name": "milcoms",
+  "displayName": "MilComs",
+  "description": "This project will provide a more enjoyable commenting style through commenting and emojis similar to a miltiary weapons system operating manual. It will use the following emojies in line with the following emojis: [ ✅❗⚠ ⛔ ⚠️ ].",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.96.3"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:python"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.insertDanger",
+        "title": "Danger comment"
+      },
+      {
+        "command": "extension.insertWarning",
+        "title": "Warning comment"
+      },
+      {
+        "command": "extension.insertCaution",
+        "title": "Caution comment"
+      }
+    ],
+    "languages": [
+      {
+        "configuration": "./language-configuration.json"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.96.3",
+    "@types/mocha": "^10.0.8",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^8.7.0",
+    "@typescript-eslint/parser": "^8.7.0",
+    "eslint": "^9.11.1",
+    "typescript": "^5.6.2",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
+  }
+}
