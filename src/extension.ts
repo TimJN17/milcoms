@@ -8,7 +8,7 @@ This function checks to see if a line is already a comment, since the 'provideCo
 fuction does not work within currently comments lines; provideCompletionItems only works
 as raw tesxt on a new line.
 
-Test extension with fn+F5
+Test extension with fn+F5. NOTE: You must use cli: 'npm run compile' before testing any new changes.
 */
 function insertEmojiComment(
 		editor: { 
@@ -59,21 +59,19 @@ export function activate(context: vscode.ExtensionContext) {
 		vscode.window.showInformationMessage("Hello World!");
 
 	});
-	
-	context.subscriptions.push(disposable);
 
 	// register the milComms completion provider for python; first parameter is { scheme: "file", lanuage: "plaintext"}, or just "python"
-	let provider = vscode.languages.registerCompletionItemProvider({ scheme: "file", language: "plaintext"}, {
+	let provider = vscode.languages.registerCompletionItemProvider("python", {
 		
 		provideCompletionItems(document: vscode.TextDocument, position: vscode.Position) {
-			vscode.window.showInformationMessage('Hello World from MilComs [ Line 1 ]!');
+			vscode.window.showInformationMessage("Hello from MilComs! This indicates 'provideCompletionItems' hits!");
 
 			// the document.lineAt returns an immutable 'TextLine' object --> the text cannot be replaced
 			const linePrefix = document.lineAt(position).text.substring(0, position.character);
 			
 			// accessing the entire string of text does not work
 			const line = document.lineAt(position).text;
-			console.log(linePrefix)
+			console.log(linePrefix);
 
 			if (linePrefix.includes("DANGER") 
 				|| linePrefix.includes("# DANGER") 
@@ -84,15 +82,13 @@ export function activate(context: vscode.ExtensionContext) {
 
 				// because the completionItemKind is set to "Snippet" the insertion of text doesn't need to be a snippet
 				// it also seems if the "snippet" vs. text suffix for the .Kind doesn;t matter either 
-				dangerCompletion.insertText = new vscode.SnippetString("#❗DANGER :");
+				dangerCompletion.insertText = "#❗DANGER :";
 				dangerCompletion.kind = vscode.CompletionItemKind.Text;
 
 				dangerDocString.insertText = '"""❗DANGER :"""';
 				dangerDocString.kind = vscode.CompletionItemKind.Text;
 
 				console.log("Danger success!");
-				console.log("line Prefix: ", linePrefix)
-				console.log("Line: ", line)
 
 				return [dangerCompletion, dangerDocString]
 			}
@@ -102,20 +98,21 @@ export function activate(context: vscode.ExtensionContext) {
 				const wanringDocSTring = new vscode.CompletionItem("CAUTION Doc String")
 
 				warningCompletion.insertText = "# ⚠️ CAUTION :";
-				warningCompletion.kind = vscode.CompletionItemKind.Snippet;
+				warningCompletion.kind = vscode.CompletionItemKind.Keyword;
+
+				// this line triggres the 'suggest' option upon the command inserting the provided text; this command can be repeated frequently
+				warningCompletion.command = { command: 'editor.action.triggerSuggest', title: 'Produce Warning Comment...'}
 				
 				wanringDocSTring.insertText = '"""⚠️ CAUTION :"""'
 				wanringDocSTring.kind = vscode.CompletionItemKind.Snippet;
 
 				console.log("Caution success!");
-				console.log("line Prefix: ", linePrefix)
-				console.log(line)
 
 				return [warningCompletion, wanringDocSTring];
 			}
 
 			if (linePrefix.includes("ALERT") || line.includes("ALERT")) {
-				const cautionCompletion = new vscode.CompletionItem("ALERT Comment");
+				const cautionCompletion = new vscode.CompletionItem("ALERT comment");
 				const cautionDocString = new vscode.CompletionItem("ALERT DOC String");
 
 				cautionCompletion.insertText = "# 🚨 ALERT :";
@@ -125,47 +122,52 @@ export function activate(context: vscode.ExtensionContext) {
 				cautionDocString.kind = vscode.CompletionItemKind.Snippet;
 
 				console.log("Alert success!");
-				console.log("line Prefix: ", linePrefix)
-				console.log(line)
 
 				return [cautionCompletion, cautionDocString]
 			}
-			if (linePrefix.includes("SUCCESS")) {
-				const successCompletion = new vscode.CompletionItem("Success Emoji");
+			if (linePrefix.includes("SUCCESS") || line.includes("SUCCESS")) {
+				const successCompletion = new vscode.CompletionItem("Success comment");
 				const successDocString = new vscode.CompletionItem("SUCCESS Doc String")
 
-				successCompletion.insertText = "#✅ SUCCESS";
+				successCompletion.insertText = "# ✅ SUCCESS";
 				successCompletion.kind = vscode.CompletionItemKind.Snippet;
 
-				successDocString.insertText = '"""✅ SUCCESS"""';
+				successDocString.insertText = '""" ✅ SUCCESS"""';
 				successDocString.kind = vscode.CompletionItemKind.Snippet
 
 				console.log("SUCCESS success!")
-				console.log(line)
 
 				return [successCompletion, successDocString];
 			}
 		}
 	}, 'DANG', 'ALER', 'CAUT', 'SUCC'); // Trigger completion after typing the few letters of each phrase
 
-	context.subscriptions.push(provider);
-
-	let editor = vscode.commands.registerCommand("milcoms.insertEmojis", async () => {
-		vscode.window.showInformationMessage("Aactive Text Editor is in play!")
+	let editor = vscode.commands.registerCommand("extension.insertEmojies", async () => {
+		vscode.window.showInformationMessage("Active Text Editor is in play!")
 		const activteText = vscode.window.activeTextEditor;
 		if (activteText) {
-			console.log("danger active text editor positive hit")
-			insertEmojiComment(activteText, "❗", "DANGER")
-		};
-		if (activteText) {
-			insertEmojiComment(activteText, "⚠️", "CAUTION")
-		};
-		if (activteText) {
-			insertEmojiComment(activteText, "🚨", "ALERT")
-		};
+
+			// define inital variables from the activetext editor
+			const document = activteText.document;
+			const selection = activteText.selection;
+
+			// get range from the start of the line to the cursor's selection
+			const range = selection.isEmpty ? document.lineAt(selection.start.line).range : selection;
+			const text = document.getText(range);
+
+			// replacement lines
+			if (text.includes("DANGER")) {
+				activteText.edit(editBuilder => {
+					const newText = text.replace("DANGER", "❗DANGER");
+					editBuilder.replace(range, newText)
+				});
+			} else {
+				vscode.window.showInformationMessage("[ INFO ]: No ' DANGER' found to replace.");
+			}
+		}
 	});
 
-	context.subscriptions.push(editor);
+	context.subscriptions.push(disposable, provider, editor);
 
 // END 'activate' vscodeExtensionContext function
 }

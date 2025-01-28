@@ -20,12 +20,20 @@
         "title": "Danger comment"
       },
       {
-        "command": "extension.insertWarning",
-        "title": "Warning comment"
+        "command": "extension.insertAlert",
+        "title": "Alert comment"
       },
       {
         "command": "extension.insertCaution",
         "title": "Caution comment"
+      },
+      {
+        "command": "extension.insertSuccess", 
+        "title": "Success comment"
+      },
+      {
+        "command": "extension.insertEmojies", 
+        "title": "Active Text Emojies"
       }
     ],
     "languages": [
