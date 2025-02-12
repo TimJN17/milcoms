@@ -10,6 +10,16 @@ as raw tesxt on a new line.
 
 Test extension with fn+F5. NOTE: You must use cli: 'npm run compile' before testing any new changes.
 */
+// Define expected completion items with corresponding emoji comments | Note the differences for each 'comment' vs. 'doc string'
+export const completionItems = [
+	{ keyword: "DANGER", expectedLabel: "DANGER", expectedInsertText: "❗DANGER :" },
+	{ keyword: "WARNING", expectedLabel: "WARNING", expectedInsertText: "⚠️ WARNING :" },
+	{ keyword: "SUCCESS", expectedLabel: "SUCCESS", expectedInsertText: "✅ SUCCESS :" },
+	{ keyword: "ALERT", expectedLabel: "ALERT", expectedInsertText: "🚨 ALERT :" }
+]
+/*
+Perhaps define the keywords & text here to avoid inconsistencies
+*/
 
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
@@ -34,14 +44,14 @@ export function activate(context: vscode.ExtensionContext) {
 
 			if (linePrefix.includes("DANGER") || line.includes("DANGER")) {
 				const dangerCompletion = new vscode.CompletionItem("DANGER comment");
-				const dangerDocString = new vscode.CompletionItem("DANGER Doc String");
+				const dangerDocString = new vscode.CompletionItem("DANGER DOC String");
 
 				// because the completionItemKind is set to "Snippet" the insertion of text doesn't need to be a snippet
 				// it also seems if the "snippet" vs. text suffix for the .Kind doesn;t matter either 
-				dangerCompletion.insertText = "#❗DANGER :";
+				dangerCompletion.insertText = "# ❗DANGER :";
 				dangerCompletion.kind = vscode.CompletionItemKind.Text;
 
-				dangerDocString.insertText = '"""❗DANGER :"""';
+				dangerDocString.insertText = '""" ❗DANGER :"""';
 				dangerDocString.kind = vscode.CompletionItemKind.Text;
 
 				console.log("Danger success!");
@@ -51,7 +61,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 			if (linePrefix.includes("CAUTION") || line.includes("CAUTION")) {
 				const warningCompletion = new vscode.CompletionItem("CAUTION comment");
-				const wanringDocSTring = new vscode.CompletionItem("CAUTION Doc String")
+				const wanringDocSTring = new vscode.CompletionItem("CAUTION DOC String")
 
 				warningCompletion.insertText = "# ⚠️ CAUTION :";
 				warningCompletion.kind = vscode.CompletionItemKind.Keyword;
@@ -82,13 +92,13 @@ export function activate(context: vscode.ExtensionContext) {
 				return [cautionCompletion, cautionDocString]
 			}
 			if (linePrefix.includes("SUCCESS") || line.includes("SUCCESS")) {
-				const successCompletion = new vscode.CompletionItem("Success comment");
+				const successCompletion = new vscode.CompletionItem("SUCCESS comment");
 				const successDocString = new vscode.CompletionItem("SUCCESS Doc String")
 
-				successCompletion.insertText = "# ✅ SUCCESS";
+				successCompletion.insertText = "# ✅ SUCCESS :";
 				successCompletion.kind = vscode.CompletionItemKind.Snippet;
 
-				successDocString.insertText = '""" ✅ SUCCESS"""';
+				successDocString.insertText = '""" ✅ SUCCESS :"""';
 				successDocString.kind = vscode.CompletionItemKind.Snippet
 
 				console.log("SUCCESS success!")
