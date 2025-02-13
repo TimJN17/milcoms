@@ -1,6 +1,6 @@
 
 <p "center">
-<img src="https://github.com/TimJN17/milcoms/blob/main/assets/20250212-Tank-120x120.jpg" width=180>
+<img src="https://github.com/TimJN17/milcoms/blob/main/assets/20250212-Tank-180x180.jpg" width=180>
 <img src="https://github.com/TimJN17/milcoms/blob/main/assets/20250212-Jet-180x180.jpg" width=180>
 </p>
 
@@ -28,6 +28,9 @@ This project will provide a more enjoyable commenting style. This extension enab
 
 # 🚨 ALERT :
 """🚨 ALERT :"""
+
+# ✅ SUCCESS :
+"""✅ SUCCESS :"""
 ```
 
 ### Development: testing and debugging
