@@ -33,10 +33,9 @@ This project will provide a more enjoyable commenting style. This extension enab
 # ✅ SUCCESS :
 """✅ SUCCESS :"""
 ```
+Animation:
 
-![alt text](https://github.com/TimJN17/milcoms/blob/main/assets/20250212-gif.gif)
-
-![alt text](assets/20250218-gif.gif)
+![Annimation](https://github.com/TimJN17/milcoms/blob/main/assets/20250218-gif.gif)
 
 ## Known Issues
 Extension does not work within currently commented lines; extension is not for "active text." Only raw text serves as amedium for the recommendations. 
