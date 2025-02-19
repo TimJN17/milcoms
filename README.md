@@ -7,10 +7,14 @@
 
 # Military Commenting (MilComs) 
 
+HOW TO: Start typing any of the below words & receive a recommended emjoji.
+
 ## Features
 VS Code Extension for comments. 
 
-This project will provide a more enjoyable commenting style. This extension enables a commenting style that mirrors some aspects of miltiary weapons system operating manuals. This extension will connect the following words [DANGER, CAUTION, ALERT, SUCCESS] with the following emojies: [ ❗, ⚠️, 🚨, ✅]. More will be added in the future.
+This project will provide a more enjoyable commenting style. This extension enables a commenting style that mirrors some aspects of miltiary weapons system operating manuals. 
+
+This extension will connect the following words [DANGER, CAUTION, ALERT, SUCCESS] with the following emojies: [ ❗, ⚠️, 🚨, ✅]. More will be added in the future.
 
 ❗ DANGER : Indicates an imminent hazard that could cause harm to your model (e.g.: regression vs. classificaion; continuous vs. discrete data).
 
@@ -34,13 +38,7 @@ This project will provide a more enjoyable commenting style. This extension enab
 """✅ SUCCESS :"""
 ```
 ### Animations
-Previous:
-
 ![Annimation](https://github.com/TimJN17/milcoms/blob/main/assets/20250218-gif.gif)
-
-New:
-
-![alt text](https://github.com/TimJN17/milcoms/blob/main/assets//clipGif.gif)
 
 ## Known Issues
 Extension does not work within currently commented lines; extension is not for "active text." Only raw text serves as amedium for the recommendations. 
