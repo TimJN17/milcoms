@@ -1,7 +1,8 @@
 
-<p "center">
+<p>
+<div align="center">
 <img src="https://github.com/TimJN17/milcoms/blob/main/assets/20250212-Tank-180x180.jpg" width=180>
-<img src="https://github.com/TimJN17/milcoms/blob/main/assets/20250212-Jet-180x180.jpg" width=180>
+</div>
 </p>
 
 # Military Commenting (MilComs) 
@@ -33,6 +34,8 @@ This project will provide a more enjoyable commenting style. This extension enab
 """✅ SUCCESS :"""
 ```
 
+![Gif of using this extension.](https://github.com/TimJN17/milcoms/blob/main/assets/20250212-gif.gif)
+
 ### Development: testing and debugging
 Currently the extension only works on raw lines of code with raw text that will be replaced with the above statements. 
 
@@ -45,3 +48,7 @@ Extension does not work within currently commented lines. Only raw text serves a
 Initial release of "Military Commenting" for improved commenting experience. 
 
 **Enjoy!**
+
+<p align="center">
+<img src="https://github.com/TimJN17/milcoms/blob/main/assets/20250212-Jet-180x180.jpg" width=180>
+</p>
