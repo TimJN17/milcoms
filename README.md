@@ -34,18 +34,18 @@ This project will provide a more enjoyable commenting style. This extension enab
 """✅ SUCCESS :"""
 ```
 
-![Gif of using this extension.](https://github.com/TimJN17/milcoms/blob/main/assets/20250212-gif.gif)
+![alt text](https://github.com/TimJN17/milcoms/blob/main/assets/20250212-gif.gif)
 
-### Development: testing and debugging
-Currently the extension only works on raw lines of code with raw text that will be replaced with the above statements. 
-
-> Tip: Many popular extensions utilize animations.
+![alt text](assets/20250218-gif.gif)
 
 ## Known Issues
-Extension does not work within currently commented lines. Only raw text serves as amedium for the recommendations. 
+Extension does not work within currently commented lines; extension is not for "active text." Only raw text serves as amedium for the recommendations. 
 
 ### 1.0.0
 Initial release of "Military Commenting" for improved commenting experience. 
+
+### Contributing
+Contact me or open a pull request.
 
 **Enjoy!**
 
