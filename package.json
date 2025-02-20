@@ -17,7 +17,11 @@
     "onLanguage:python"
   ],
   "main": "./out/extension.js",
-  "browser": "https://github.com/TimJN17/milcoms/tree/main",
+  "browser": "https://github.com/TimJN17/milcoms",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TimJN17/milcoms"
+  },
   "homepage": "https://github.com/TimJN17/milcoms/blob/main/README.md",
   "bugs": {
     "url": "https://github.com/TimJN17/milcoms/issues",
