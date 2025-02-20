@@ -10,7 +10,7 @@
 HOW TO: Start typing any of the below words & receive a recommended emjoji.
 
 ## Features
-VS Code Extension for comments. 
+This is a limited VS Code Extension for comments & documentation. 
 
 This project will provide a more enjoyable commenting style. This extension enables a commenting style that mirrors some aspects of miltiary weapons system operating manuals. 
 
