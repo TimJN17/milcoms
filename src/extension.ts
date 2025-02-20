@@ -22,7 +22,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 	// register the milComms completion provider for python; first parameter is { scheme: "file", lanuage: "plaintext"}, or just "python"
 	completionItems.forEach(({keyword, expectedLabel, expectedInsertText}) => {
-		let provider = vscode.languages.registerCompletionItemProvider("python", {
+		let providerPY = vscode.languages.registerCompletionItemProvider("python", {
 		
 			provideCompletionItems(document: vscode.TextDocument, position: vscode.Position) {
 				vscode.window.showInformationMessage("Hello from MilComs! 'ProvideCompletionItems' is activated!");
@@ -51,9 +51,39 @@ export function activate(context: vscode.ExtensionContext) {
 					return [comment, docString];
 				};
 			}
-		}, 
-		'DANG', 'ALER', 'CAUT', 'SUCC'); // Trigger completion after typing the few letters of each phrase
-		context.subscriptions.push(provider);
+		}, 'DANG', 'ALER', 'CAUT', 'SUCC'); 
+
+		let prvodierJS = vscode.languages.registerCompletionItemProvider("typescript", {
+
+			provideCompletionItems(document: vscode.TextDocument, position: vscode.Position) {
+				
+				// the document.lineAt returns an immutable 'TextLine' object --> the text cannot be replaced
+				const linePrefix = document.lineAt(position).text.substring(0, position.character);
+				
+				// accessing the entire string of text does not work
+				const line = document.lineAt(position).text;
+	
+				// if sttament to check for the keyword
+				if (linePrefix.includes(`${keyword}`) || line.includes(`${keyword}`)) {
+
+					// create a comment & docstring options for the user
+					const comment = new vscode.CompletionItem(`${keyword} COMMENT`);
+					const docString = new vscode.CompletionItem(`${keyword} DOC STRING`);
+	
+					// COMMENT: assign text and kind for the vscode object 
+					comment.insertText = `// ${expectedInsertText}`;
+					comment.kind = vscode.CompletionItemKind.Text;
+	
+					// DOC STRING: assign text and kind for the vscode object
+					docString.insertText = `/* ${expectedInsertText} */`;
+					docString.kind = vscode.CompletionItemKind.Text;
+	
+					return [comment, docString];
+				};
+			}
+		}, 'DANG', 'ALER', 'CAUT', 'SUCC');
+
+		context.subscriptions.push(providerPY, prvodierJS);
 	});
 
 // END for the 'activate' vscodeExtensionContext function

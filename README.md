@@ -10,11 +10,11 @@
 HOW TO: Start typing any of the below words & receive a recommended emjoji.
 
 ## Features
-This is a limited VS Code Extension for comments & documentation. 
+This is a limited VS Code Extension for comments & documentation & only works for Python. 
 
 This project will provide a more enjoyable commenting style. This extension enables a commenting style that mirrors some aspects of miltiary weapons system operating manuals. 
 
-This extension will connect the following words [DANGER, CAUTION, ALERT, SUCCESS] with the following emojies: [ ❗, ⚠️, 🚨, ✅]. More will be added in the future.
+This extension will connect the following words [DANGER, CAUTION, ALERT, SUCCESS] with the following emojies: [ ❗, ⚠️, 🚨, ✅]. More will be added in the future. More languages will be added in the future. 
 
 ❗ DANGER : Indicates an imminent hazard that could cause harm to your model (e.g.: regression vs. classificaion; continuous vs. discrete data).
 
@@ -47,7 +47,10 @@ Extension does not work within currently commented lines; extension is not for "
 Initial release of "Military Commenting" for improved commenting experience. 
 
 ### Contributing
-Contact me or open a pull request.
+Contact me or open a pull request. Using TypeScript & compiling to JavaScript. THerefore must use the below command:
+```bash
+npm run compile
+```
 
 **Enjoy!**
 

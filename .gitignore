@@ -7,8 +7,11 @@ __pycache__/
 *.so
 
 # Node.js
+./vsc-extension-quickstart.md
 node_modules
-# NOTE: need 'out' directory as this exenstion compiles the TypeScript into JavaSript
+*.vsix
+out
+*out
 
 .vscode-test
 
