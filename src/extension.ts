@@ -5,12 +5,14 @@ This extensiton checks the string on a raw line of text in a python file and sug
 Test extension with fn+F5. NOTE: You must use cli: 'npm run compile' before testing any new changes.
 */
 
-// Define expected completion items with corresponding emoji comments | Note the differences for each 'comment' vs. 'doc string'
+// Define expected completion items with corresponding emoji comments | Note the differences for each 'comment' vs. 'doc string'    
 export const completionItems = [
 	{ keyword: "DANGER", expectedLabel: "DANGER", expectedInsertText: "❗DANGER :" },
 	{ keyword: "CAUTION", expectedLabel: "CAUTION", expectedInsertText: "⚠️ CAUTION :" },
 	{ keyword: "ALERT", expectedLabel: "ALERT", expectedInsertText: "🚨 ALERT :" },
-	{ keyword: "SUCCESS", expectedLabel: "SUCCESS", expectedInsertText: "✅ SUCCESS :" }
+	{ keyword: "SUCCESS", expectedLabel: "SUCCESS", expectedInsertText: "✅ SUCCESS :" },
+	{ keyword: "VICTORY", expectedLabel: "VICTORY", expectedInsertText: "🏆 VICTORY :" },
+	{ keyword: "BOOM", expectedLabel: "BOOM", expectedInsertText: "💥 BOOM :" }
 ];
 
 // This method is called when your extension is activated; Your extension is activated the very first time the command is executed
@@ -53,37 +55,7 @@ export function activate(context: vscode.ExtensionContext) {
 			}
 		}, 'DANG', 'ALER', 'CAUT', 'SUCC'); 
 
-		let prvodierJS = vscode.languages.registerCompletionItemProvider("typescript", {
-
-			provideCompletionItems(document: vscode.TextDocument, position: vscode.Position) {
-				
-				// the document.lineAt returns an immutable 'TextLine' object --> the text cannot be replaced
-				const linePrefix = document.lineAt(position).text.substring(0, position.character);
-				
-				// accessing the entire string of text does not work
-				const line = document.lineAt(position).text;
-	
-				// if sttament to check for the keyword
-				if (linePrefix.includes(`${keyword}`) || line.includes(`${keyword}`)) {
-
-					// create a comment & docstring options for the user
-					const comment = new vscode.CompletionItem(`${keyword} COMMENT`);
-					const docString = new vscode.CompletionItem(`${keyword} DOC STRING`);
-	
-					// COMMENT: assign text and kind for the vscode object 
-					comment.insertText = `// ${expectedInsertText}`;
-					comment.kind = vscode.CompletionItemKind.Text;
-	
-					// DOC STRING: assign text and kind for the vscode object
-					docString.insertText = `/* ${expectedInsertText} */`;
-					docString.kind = vscode.CompletionItemKind.Text;
-	
-					return [comment, docString];
-				};
-			}
-		}, 'DANG', 'ALER', 'CAUT', 'SUCC');
-
-		context.subscriptions.push(providerPY, prvodierJS);
+		context.subscriptions.push(providerPY);
 	});
 
 // END for the 'activate' vscodeExtensionContext function

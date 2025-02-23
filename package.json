@@ -14,7 +14,8 @@
   ],
   "keywords": ["commenting", "emojies", "emoji", "miltiary", "documntation"],
   "activationEvents": [
-    "onLanguage:python"
+    "onLanguage:python",
+    "onLanguage:typescript"
   ],
   "main": "./out/extension.js",
   "repository": {
