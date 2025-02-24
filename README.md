@@ -24,6 +24,10 @@ This extension will connect the following words [DANGER, CAUTION, ALERT, SUCCESS
 
 ✅ SUCCESS : Indicates something good about the model or software!
 
+🏆 VICTORY : Indicates a complete sytsem functionality; better than SUCCESS!
+
+💥 BOOM : Indicates seomthing cool!
+
 ```python
 # ❗DANGER : 
 """❗DANGER : """
@@ -36,6 +40,12 @@ This extension will connect the following words [DANGER, CAUTION, ALERT, SUCCESS
 
 # ✅ SUCCESS :
 """✅ SUCCESS :"""
+
+# 🏆 VICTORY :
+"""🏆 VICTORY :"""
+
+# 💥 BOOM : 
+"""💥 BOOM : """
 ```
 ### Animations
 ![Annimation](https://github.com/TimJN17/milcoms/blob/main/assets/20250218-gif.gif)

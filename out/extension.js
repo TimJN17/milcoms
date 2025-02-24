@@ -69,7 +69,7 @@ function activate(context) {
                 }
                 ;
             }
-        }, 'DANG', 'ALER', 'CAUT', 'SUCC');
+        });
         context.subscriptions.push(providerPY);
     });
     // END for the 'activate' vscodeExtensionContext function

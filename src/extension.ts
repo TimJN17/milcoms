@@ -53,7 +53,7 @@ export function activate(context: vscode.ExtensionContext) {
 					return [comment, docString];
 				};
 			}
-		}, 'DANG', 'ALER', 'CAUT', 'SUCC'); 
+		}); 
 
 		context.subscriptions.push(providerPY);
 	});
