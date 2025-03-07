@@ -27,7 +27,7 @@
     "url": "https://github.com/TimJN17/milcoms/issues",
     "email": "tim.j.n17@gmail.com"
   },
-  "galleryBanner": {"color": "#C80000", "theme": "dark"},
+  "galleryBanner": {"color": "#C00000", "theme": "dark"},
   "pricing": "Free",
   "contributes": {
     "commands": [
@@ -46,6 +46,14 @@
       {
         "command": "extension.insertSuccess",
         "title": "SUCCESS COMMENT"
+      },
+      {
+        "command": "extension.insertVictory",
+        "title": "VICTORY COMMENT"
+      },
+      {
+        "command": "extension.insertBoom",
+        "title": "BOOM COMMENT"
       }
     ],
     "languages": [

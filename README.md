@@ -1,7 +1,8 @@
 
 <p>
 <div align="center">
-<img src="https://github.com/TimJN17/milcoms/blob/main/assets/20250212-Tank-180x180.jpg" width=180>
+<!-- <img src="https://github.com/TimJN17/milcoms/blob/main/assets/20250212-Tank-180x180.jpg" width=180> -->
+<img src="./assets/20250212-Tank-180x180.jpg" width=180>
 </div>
 </p>
 
@@ -48,7 +49,8 @@ This extension will connect the following words [DANGER, CAUTION, ALERT, SUCCESS
 """💥 BOOM : """
 ```
 ### Animations
-![Annimation](https://github.com/TimJN17/milcoms/blob/main/assets/20250218-gif.gif)
+<!-- ![Annimation](https://github.com/TimJN17/milcoms/blob/main/assets/20250218-gif.gif) -->
+![Annimation](assets/20250218-gif.gif)
 
 ## Known Issues
 Extension does not work within currently commented lines; extension is not for "active text." Only raw text serves as amedium for the recommendations. 
@@ -65,5 +67,6 @@ npm run compile
 **Enjoy!**
 
 <p align="center">
-<img src="https://github.com/TimJN17/milcoms/blob/main/assets/20250212-Jet-180x180.jpg" width=180>
+<!-- <img src="https://github.com/TimJN17/milcoms/blob/main/assets/20250212-Jet-180x180.jpg" width=180> -->
+<img src="./assets/20250212-Jet-180x180.jpg" width=180>
 </p>
