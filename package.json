@@ -1,6 +1,6 @@
 {
   "name": "milcoms",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "timjn17",
   "engines": {
     "vscode": "^1.96.3"
@@ -8,11 +8,23 @@
   "displayName": "MilComs",
   "license": "BSD-3-Clause",
   "description": "This project will provide a more enjoyable commenting style through commenting and emojis similar to a miltiary weapons system operating manual. It will use the following emojies in line with the following emojis: [ ✅❗🚨 ⛔ ⚠️ ].",
-  "author": {"name": "TimJN17"},
+  "author": {
+    "name": "TimJN17"
+  },
   "categories": [
-    "Programming Languages", "Formatters", "Data Science", "Machine Learning", "Notebooks"
+    "Programming Languages",
+    "Formatters",
+    "Data Science",
+    "Machine Learning",
+    "Notebooks"
   ],
-  "keywords": ["commenting", "emojies", "emoji", "miltiary", "documntation"],
+  "keywords": [
+    "commenting",
+    "emojies",
+    "emoji",
+    "miltiary",
+    "documntation"
+  ],
   "activationEvents": [
     "onLanguage:python",
     "onLanguage:typescript"
@@ -27,7 +39,10 @@
     "url": "https://github.com/TimJN17/milcoms/issues",
     "email": "tim.j.n17@gmail.com"
   },
-  "galleryBanner": {"color": "#C00000", "theme": "dark"},
+  "galleryBanner": {
+    "color": "#C00000",
+    "theme": "dark"
+  },
   "pricing": "Free",
   "contributes": {
     "commands": [
