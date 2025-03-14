@@ -7,7 +7,7 @@
   },
   "displayName": "MilComs",
   "license": "BSD-3-Clause",
-  "description": "This project will provide a more enjoyable commenting style through commenting and emojis similar to a miltiary weapons system operating manual. It will use the following emojies in line with the following emojis: [ ✅❗🚨 ⛔ ⚠️ ].",
+  "description": "This project will provide a more enjoyable commenting style through commenting and emojis similar to a miltiary weapons system operating manual. It will use the following emojies in line with the following emojis: [ ✅❗🚨 ⛔ ⚠️ 🏆 💥].",
   "author": {
     "name": "TimJN17"
   },
@@ -40,7 +40,7 @@
     "email": "tim.j.n17@gmail.com"
   },
   "galleryBanner": {
-    "color": "#C00000",
+    "color": "#000000",
     "theme": "dark"
   },
   "pricing": "Free",
