@@ -1,30 +1,29 @@
 
 <p>
 <div align="center">
-<!-- <img src="https://github.com/TimJN17/milcoms/blob/main/assets/20250212-Tank-180x180.jpg" width=180> -->
 <img src="./assets/20250212-Tank-180x180.jpg" width=180>
 </div>
 </p>
 
 # Military Commenting (MilComs) 
-<!-- ![DANGER](assets/20250309%20DANGER.png) ![WARNING](assets/20250309%20WARNING.png) ![CAUTION](assets/20250309%20CAUTION.png) -->
-<!-- <p align="center">
-<img src="assets/20250309 DANGER.png" width="50%" /> <img src="assets/20250309 WARNING.png" width="50%" /> <img src="assets/20250309 CAUTION.png" width="50%" />
-</p> -->
-
-🚨 Supported Langauges: [ python, rust, cpp, typescript ]
+🚨 Supported Langauges: [ python, rust, cpp, typescript, go ]
 
 ## Features
 Improves the programming documentation experience. 
 
 This extension enables a commenting style that mirrors some aspects of miltiary weapons system operating manuals. Examples are shown below:
-DANGER | WARNING | CAUTION
-:----: | :-----: | :----: |
-![DANGER](assets/20250309%20DANGER.png)| ![WARNING](assets/20250309%20WARNING.png) | ![CAUTION](assets/20250309%20CAUTION.png)
+
+<table>
+<tr>
+<td><img src="assets/20250309 DANGER.png" width="150%" /></td>
+<td><img src="assets/20250309 WARNING.png" width="150%" /></td>
+<td><img src="assets/20250309 CAUTION.png" width="150%" /></td>
+</tr>
+</table>
 
 This extension will connect the following words [DANGER, CAUTION, ALERT, SUCCESS, VICTORY, BOOM] with the following emojies: [ ❗, ⚠️, 🚨, ✅, 🏆, 💥]. More will be added in the future. More languages will be added in the future. 
 
-**HOW TO**: Start typing any of the below words & receive a recommended emjoji.
+**HOW TO**: Start typing any of the below words & receive a recommended emjoji comment.
 
 ❗ DANGER : Indicates an imminent hazard that could cause harm to your model (e.g.: regression vs. classificaion; continuous vs. discrete data).
 
@@ -58,7 +57,6 @@ This extension will connect the following words [DANGER, CAUTION, ALERT, SUCCESS
 """💥 BOOM : """
 ```
 ### Animations
-<!-- ![Annimation](https://github.com/TimJN17/milcoms/blob/main/assets/20250218-gif.gif) -->
 ![Annimation](assets/20250218-gif.gif)
 
 ## Known Issues
@@ -76,6 +74,5 @@ npm run compile
 **Enjoy!**
 
 <p align="center">
-<!-- <img src="https://github.com/TimJN17/milcoms/blob/main/assets/20250212-Jet-180x180.jpg" width=180> -->
 <img src="./assets/20250212-Jet-180x180.jpg" width=180>
 </p>
