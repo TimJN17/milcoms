@@ -7,15 +7,24 @@
 </p>
 
 # Military Commenting (MilComs) 
+<!-- ![DANGER](assets/20250309%20DANGER.png) ![WARNING](assets/20250309%20WARNING.png) ![CAUTION](assets/20250309%20CAUTION.png) -->
+<!-- <p align="center">
+<img src="assets/20250309 DANGER.png" width="50%" /> <img src="assets/20250309 WARNING.png" width="50%" /> <img src="assets/20250309 CAUTION.png" width="50%" />
+</p> -->
 
-HOW TO: Start typing any of the below words & receive a recommended emjoji.
+🚨 Supported Langauges: [ python, rust, cpp, typescript ]
 
 ## Features
-This is a limited VS Code Extension for comments & documentation & only works for Python. 
+Improves the programming documentation experience. 
 
-This project will provide a more enjoyable commenting style. This extension enables a commenting style that mirrors some aspects of miltiary weapons system operating manuals. 
+This extension enables a commenting style that mirrors some aspects of miltiary weapons system operating manuals. Examples are shown below:
+DANGER | WARNING | CAUTION
+:----: | :-----: | :----: |
+![DANGER](assets/20250309%20DANGER.png)| ![WARNING](assets/20250309%20WARNING.png) | ![CAUTION](assets/20250309%20CAUTION.png)
 
-This extension will connect the following words [DANGER, CAUTION, ALERT, SUCCESS] with the following emojies: [ ❗, ⚠️, 🚨, ✅]. More will be added in the future. More languages will be added in the future. 
+This extension will connect the following words [DANGER, CAUTION, ALERT, SUCCESS, VICTORY, BOOM] with the following emojies: [ ❗, ⚠️, 🚨, ✅, 🏆, 💥]. More will be added in the future. More languages will be added in the future. 
+
+**HOW TO**: Start typing any of the below words & receive a recommended emjoji.
 
 ❗ DANGER : Indicates an imminent hazard that could cause harm to your model (e.g.: regression vs. classificaion; continuous vs. discrete data).
 

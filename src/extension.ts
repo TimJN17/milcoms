@@ -15,6 +15,8 @@ export const completionItems = [
 	{ keyword: "BOOM", expectedLabel: "BOOM", expectedInsertText: "💥 BOOM :" }
 ];
 
+const similarLanguages = ["typescript", "rust", "cpp", "go"];
+
 // This method is called when your extension is activated; Your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
 
@@ -56,10 +58,43 @@ export function activate(context: vscode.ExtensionContext) {
 		}); 
 
 		context.subscriptions.push(providerPY);
+
+		let providerTS = vscode.languages.registerCompletionItemProvider(similarLanguages, {
+		
+			provideCompletionItems(document: vscode.TextDocument, position: vscode.Position) {
+				vscode.window.showInformationMessage("Hello from MilComs! 'ProvideCompletionItems' is activated!");
+	
+				// the document.lineAt returns an immutable 'TextLine' object --> the text cannot be replaced
+				const linePrefix = document.lineAt(position).text.substring(0, position.character);
+				
+				// accessing the entire string of text does not work
+				const line = document.lineAt(position).text;
+	
+				// if sttament to check for the keyword
+				if (linePrefix.includes(`${keyword}`) || line.includes(`${keyword}`)) {
+
+					// create a comment & docstring options for the user
+					const comment = new vscode.CompletionItem(`${keyword} COMMENT`);
+					const docString = new vscode.CompletionItem(`${keyword} DOC STRING`);
+	
+					// COMMENT: assign text and kind for the vscode object 
+					comment.insertText = `// ${expectedInsertText}`;
+					comment.kind = vscode.CompletionItemKind.Text;
+	
+					// DOC STRING: assign text and kind for the vscode object
+					docString.insertText = `/*${expectedInsertText}*/`;
+					docString.kind = vscode.CompletionItemKind.Text;
+	
+					return [comment, docString];
+				};
+			}
+		}); 
+
+		context.subscriptions.push(providerTS);
 	});
 
 // END for the 'activate' vscodeExtensionContext function
-}
+};
 
 // This method is called when your extension is deactivated
 export function deactivate() {};
