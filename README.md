@@ -21,7 +21,7 @@ This extension enables a commenting style that mirrors some aspects of miltiary 
 </tr>
 </table>
 
-This extension will connect the following words [DANGER, CAUTION, ALERT, SUCCESS, VICTORY, BOOM] with the following emojies: [ ❗, ⚠️, 🚨, ✅, 🏆, 💥]. More will be added in the future. More languages will be added in the future. 
+This extension will connect the following words [DANGER, CAUTION, ALERT, SUCCESS, VICTORY, BOOM] with the following emojis: [ ❗, ⚠️, 🚨, ✅, 🏆, 💥]. More will be added in the future. More languages will be added in the future. 
 
 **HOW TO**: Start typing any of the below words & receive a recommended emjoji comment.
 
@@ -61,9 +61,6 @@ This extension will connect the following words [DANGER, CAUTION, ALERT, SUCCESS
 
 ## Known Issues
 Extension does not work within currently commented lines; extension is not for "active text." Only raw text serves as amedium for the recommendations. 
-
-### 1.0.0
-Initial release of "Military Commenting" for improved commenting experience. 
 
 ### Contributing
 Contact me or open a pull request. Using TypeScript & compiling to JavaScript. THerefore must use the below command:
